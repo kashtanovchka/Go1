@@ -6,4 +6,20 @@
 */
 package main
 
-// Ваш код
+import "fmt"
+
+func main() {
+	var number uint16
+	fmt.Print("Введите четырехзначное число: ")
+	fmt.Scan(&number)
+
+	if number >= 1000 && number <= 9999 {
+		if number/1000 == number%10 && number/100%10 == number/10%10 {
+			fmt.Println(number, "является палиндромом.")
+		} else {
+			fmt.Println(number, "не является палиндромом.")
+		}
+	} else {
+		fmt.Println("Пожалуйста, введите корректное четырехзначное число.")
+	}
+}
